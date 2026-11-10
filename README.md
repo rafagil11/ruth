@@ -12,7 +12,7 @@ She learns from every moment she lives, keeps what you tell her in confidence, d
 ![Linux · macOS · Windows](https://img.shields.io/badge/runs%20on-Linux%20%C2%B7%20macOS%20%C2%B7%20Windows-2a2521.svg)
 ![Only dependency: numpy](https://img.shields.io/badge/dependencies-numpy-7b7068.svg)
 
-[**Download**](#download) · [**What makes her different**](#what-makes-her-different) · [**How she works**](#how-she-works) · [**Using Ruth**](#using-ruth) · [**Architecture & research**](docs/ARCHITECTURE.md)
+[**Download**](#download) · [**What makes her different**](#what-makes-her-different) · [**How she works**](#how-she-works) · [**Using Ruth**](#using-ruth) · [**FAQ**](#frequently-asked-questions) · [**Architecture & research**](docs/ARCHITECTURE.md)
 
 <img src="docs/images/app-desktop.png" alt="Ruth's app: she answers 'The sky is blue today.' and stops herself before saying a private door code" width="880">
 
@@ -109,6 +109,42 @@ did *not* help.
 | `ruth hear X.wav` · `ruth see X.npy` · `ruth voice "…" out.wav` | ears · eyes · mouth |
 | `ruth export brain.bin` then `ruth-core brain.bin learn` | her whole brain as one dependency-free C file |
 | `ruth bench` | measure her against simple pattern-counting baselines |
+
+### Usage Examples
+
+**1. Teaching Ruth privately**
+To teach Ruth facts while ensuring certain sections are classified as private secrets:
+```sh
+# Using inline private markers in a text file
+echo "The project codename is {{ProjectX}} and the timeline is confidential." > secret.txt
+ruth teach secret.txt --private
+```
+
+**2. Triggering sleep consolidation**
+Process memories and consolidate experience into her energy-basins:
+```sh
+ruth sleep
+```
+
+**3. Inspecting internal state and metrics**
+Check vital signs, memory allocation, and emotional or confidence baselines:
+```sh
+ruth status
+```
+
+## Frequently Asked Questions (FAQ)
+
+**Q: Does Ruth require an internet connection?**
+A: No. Ruth is 100% offline and local-first. She does not call external APIs, cloud services, or telemetry endpoints.
+
+**Q: How do I back up or migrate my Ruth instance?**
+A: Simply copy the contents of your data folder (`~/.local/share/ruth` on Linux, `~/Library/Application Support/Ruth` on macOS, or `%APPDATA%\Ruth` on Windows) to your new machine.
+
+**Q: How does token-free learning work?**
+ANN models traditionally chop text into subword tokens using a fixed vocabulary. Ruth reads raw character streams directly into continuous signal voltages (`numpy` arrays), processing time and characters continuously.
+
+**Q: Can I run Ruth on low-end hardware?**
+A: Yes. Ruth has a tiny footprint (under 50MB of memory) and runs comfortably on low-power devices like Raspberry Pis, Chromebooks, or older laptops.
 
 ## Honest status
 
