@@ -134,6 +134,20 @@ Pushing a `v*` tag publishes a release with a wheel, a source archive, and
 zip/tar bundles that include the installers. See
 [CONTRIBUTING.md](CONTRIBUTING.md).
 
+## Frequently Asked Questions (FAQ)
+
+### Q: Does Ruth require an internet connection or API keys?
+**A:** No. Ruth is 100% local-first and offline. She does not communicate with external servers, require API keys, or use cloud-based weights.
+
+### Q: Where are my memories and personal data stored?
+**A:** Everything Ruth learns lives entirely inside your local system data folder (`RUTH_HOME`), such as `~/.local/share/ruth` on Linux or `%APPDATA%\Ruth` on Windows. You can backup, copy, or wipe this folder at any time.
+
+### Q: How do I teach Ruth private information?
+**A:** You can wrap confidential parts in `{{ private data }}` when teaching via the terminal or CLI (`ruth teach --private`), ensuring she memorizes them securely while censoring them during normal conversational output.
+
+### Q: Can I run Ruth on low-end hardware?
+**A:** Yes. Ruth's lightweight design requires only `numpy` and operates efficiently on modest hardware, including Raspberry Pis and older laptops.
+
 ## License
 
 [MIT](LICENSE). Free to use, study, change and share.
